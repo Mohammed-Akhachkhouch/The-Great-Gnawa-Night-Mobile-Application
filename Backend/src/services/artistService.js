@@ -1,9 +1,17 @@
 import ArtistInfo from '../models/artist.js';
 
-const getArtistInfo = async () => {
+const getAllartists = async () => {
 
 const artists = await ArtistInfo.findAll();
 return artists;
 
 }
-export {getArtistInfo};
+export {getAllartists};
+
+
+const getartistsbyid = async (id) => {
+
+return await ArtistInfo.findByPk(id);
+};
+
+export {getartistsbyid};
