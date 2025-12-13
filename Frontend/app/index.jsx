@@ -1,29 +1,3 @@
-// import { View, Text, TouchableOpacity } from "react-native";
-// import { router } from "expo-router";
-
-// export default function Home() {
-//   return (
-//     <View style={{ padding: 20, flex: 1, justifyContent: "center" }}>
-//       <Text style={{ fontSize: 28, fontWeight: "bold" }}>Home Screen</Text>
-
-//       <TouchableOpacity
-//         onPress={() => router.push("/artist/1")}
-//         style={{
-//           marginTop: 20,
-//           padding: 12,
-//           backgroundColor: "#4F46E5",
-//           borderRadius: 10,
-//         }}
-//       >
-//         <Text style={{ color: "white", textAlign: "center" }}>
-//           Go to Artist 1
-//         </Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
-
-
 import React from 'react';
 import {
   View,
@@ -35,20 +9,17 @@ import {
 
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native'; 
-import { artists } from "../data/data";
-
+import { router } from 'expo-router'; 
 
 export default function EventScreen() {
-  const navigation = useNavigation();
 
   const handleSeeArtistes = () => {
-    navigation.navigate('events');
+    router.push('/artists'); 
   };
 
-  const handleBackToTicket = () => {
-    navigation.goBack();
-  };
+ const handleBackToTicket = () => {
+  router.push('/tickets'); 
+};
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -65,12 +36,7 @@ export default function EventScreen() {
 
         <View style={styles.infoCardsContainer}>
           <View style={styles.infoCard}>
-            <Ionicons
-              name="calendar"
-              size={24}
-              color="#6B7280"
-              style={{ marginRight: 10 }}
-            />
+            <Ionicons name="calendar" size={24} color="#6B7280" style={{ marginRight: 10 }} />
             <View>
               <Text style={styles.cardLabel}>Date :</Text>
               <Text style={styles.cardValue}>December 28, 2025</Text>
@@ -78,12 +44,7 @@ export default function EventScreen() {
           </View>
 
           <View style={styles.infoCard}>
-            <FontAwesome
-              name="map-marker"
-              size={24}
-              color="#6B7280"
-              style={{ marginRight: 10 }}
-            />
+            <FontAwesome name="map-marker" size={24} color="#6B7280" style={{ marginRight: 10 }} />
             <View>
               <Text style={styles.cardLabel}>Location :</Text>
               <Text style={styles.cardValue}>Agadir, Morocco</Text>
@@ -214,7 +175,3 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 });
-
-
-
-

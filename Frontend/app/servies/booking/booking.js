@@ -1,4 +1,3 @@
-
 import api from "../../instant";
 
 export const createBooking = async (bookingData) => {
@@ -20,3 +19,4 @@ export const fetchBookingsByEmail = async (email) => {
     throw error;
   }
 };
+

@@ -6,17 +6,21 @@ import { creatBookingController, getBookingByCodeController, getBookingsByEmailC
 
 
 
-
 const router = Router();
 
-router.get('/api/events', geteventcontroller);
+router.get('/events', geteventcontroller);
 
-router.get('/api/artists',getArtistsController );
-router.get('/api/artist/:id', getartistsbyidController);
+router.get('/artists',getArtistsController );
+router.get('/artists/:id', getartistsbyidController);
 
-router.post('/api/booking', creatBookingController);
-router.get('/api/booking/:code', getBookingByCodeController);
-router.get('/api/booking/email/:email', getBookingsByEmailController);
+router.post('/bookings', creatBookingController);
+
+
+router.get('/booking/:code', getBookingByCodeController);
+router.get('/booking/email/:email', getBookingsByEmailController);
 
 
 export default router;
+
+
+

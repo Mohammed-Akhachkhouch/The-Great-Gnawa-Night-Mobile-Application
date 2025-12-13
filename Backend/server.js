@@ -20,9 +20,13 @@ async function startServer() {
         console.log("✅ Tables are synchronized");
 
        
-        app.listen(PORT, () => {
-            console.log(`🚀 Server is running on port ${PORT}`);
-        });
+        // app.listen(PORT, () => {
+        //     console.log(`🚀 Server is running on port ${PORT}`);
+        // });
+
+
+        app.listen(5000, '0.0.0.0', () => console.log("Server running"));
+
     } catch (error) {
         console.error("❌ Error starting server:", error);
         process.exit(1);
